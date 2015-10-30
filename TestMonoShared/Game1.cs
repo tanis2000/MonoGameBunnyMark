@@ -63,6 +63,7 @@ namespace TestMonoIOS
 			s.Renderers.Add (new EverythingRenderer ());
 
 			Scene = s;
+			Engine.Commands.Open = true;
 		}
 
 		/// <summary>
@@ -87,6 +88,8 @@ namespace TestMonoIOS
 		/// <param name="gameTime">Provides a snapshot of timing values.</param>
 		protected override void Update (GameTime gameTime)
 		{
+			base.Update (gameTime);
+
 			// For Mobile devices, this logic will close the Game when the Back button is pressed
 			// Exit() is obsolete on iOS
 			#if !__IOS__
@@ -96,14 +99,8 @@ namespace TestMonoIOS
 			}
 			#endif
 			// TODO: Add your update logic here	
-			TouchCollection touchCollection = TouchPanel.GetState();
 
-			if (touchCollection.Count > 0)
-			{
-				addBunnies (1000);
-			}
-
-			foreach (Bunny bunny in bunnies) {
+			foreach (Bunny bunny in Scene.Tracker.GetEntities<Bunny>()) {
 				bunny.posX += bunny.speedX;
 				bunny.posY += bunny.speedY;
 				bunny.speedY += gravity;
@@ -131,10 +128,26 @@ namespace TestMonoIOS
 					bunny.speedY = 0;
 					bunny.posY = minY;
 				}
+				float oldX = bunny.Position.X;
+				float oldY = bunny.Position.Y;
 				bunny.Position.X = bunny.posX;
 				bunny.Position.Y = bunny.posY;
+				if (bunny.Scene != null && bunny.CollideCheck<Bunny> ()) {
+					bunny.Position.X = oldX;
+					bunny.Position.Y = oldY;
+					bunny.speedX = (float)rnd.NextDouble() * 5;
+					bunny.speedY = -(float)rnd.NextDouble() * 5;
+
+				}
 			}
-			base.Update (gameTime);
+
+			TouchCollection touchCollection = TouchPanel.GetState();
+
+			if (touchCollection.Count > 0)
+			{
+				addBunnies (10);
+			}
+
 		}
 
 		/// <summary>
@@ -179,6 +192,8 @@ namespace TestMonoIOS
 				b.speedX = (float)rnd.NextDouble() * 5;
 				b.speedY = (float)rnd.NextDouble() * 5 - 2.5f;
 				b.Add (new Image (image));
+				Hitbox hb = new Hitbox(image.Width, image.Height, 0, 0);
+				b.Collider = hb;
 				bunnies.Add(b);
 			}
 			bunniesCount += count;

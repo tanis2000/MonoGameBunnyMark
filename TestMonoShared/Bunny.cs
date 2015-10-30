@@ -7,6 +7,7 @@ using Monocle;
 
 namespace TestMonoIOS
 {
+	[Pooled, Tracked]
 	public class Bunny : Entity
 	{
 		public float posX = 0;
