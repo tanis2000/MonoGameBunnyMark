@@ -36,7 +36,7 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <CodesignProvision>97f7323d-63d7-47b7-aa3c-4ef4dd90ba20</CodesignProvision>
+    <CodesignProvision>9ae63dd2-5888-43f7-a312-5dedb8eaa815</CodesignProvision>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchI18n>
     </MtouchI18n>
@@ -64,7 +64,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignProvision>97f7323d-63d7-47b7-aa3c-4ef4dd90ba20</CodesignProvision>
+    <CodesignProvision>9ae63dd2-5888-43f7-a312-5dedb8eaa815</CodesignProvision>
     <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchI18n>
     </MtouchI18n>
@@ -76,10 +76,8 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game1.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Bunny.cs" />
     <Compile Include="FrameCounter.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -93,6 +91,8 @@
     <BundleResource Include="Default.png" />
     <BundleResource Include="GameThumbnail.png" />
   </ItemGroup>
+  <Import Project="..\TestMonoShared\TestMonoShared.projitems" Label="Shared" Condition="Exists('..\TestMonoShared\TestMonoShared.projitems')" />
+  <Import Project="..\Monocle\Monocle.projitems" Label="Shared" Condition="Exists('..\Monocle\Monocle.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <ItemGroup>

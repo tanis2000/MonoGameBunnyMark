@@ -31,3 +31,9 @@
 /processorParam:TextureFormat=Compressed
 /build:test.spritefont
 
+#begin Monocle/MonocleDefault.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:Monocle/MonocleDefault.spritefont
+

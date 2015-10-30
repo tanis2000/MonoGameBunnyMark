@@ -27,7 +27,7 @@ namespace TestMonoIOS
 
 		internal static void RunGame ()
 		{
-			game = new Game1 ();
+			game = new Game1 (640, 480, "Test");
 			game.Run ();
 		}
 
