@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Storage;
 
 using Monocle;
 
-namespace TestMonoIOS
+namespace TestMonoShared
 {
 	[Pooled, Tracked]
 	public class Bunny : Entity

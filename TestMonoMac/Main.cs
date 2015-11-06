@@ -6,6 +6,8 @@ using System.Linq;
 using MonoMac.AppKit;
 using MonoMac.Foundation;
 
+using TestMonoShared;
+
 #endregion
 
 namespace TestMonoMac

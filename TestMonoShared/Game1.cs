@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Input.Touch;
 using Monocle;
 #endregion
 
-namespace TestMonoIOS
+namespace TestMonoShared
 {
 	/// <summary>
 	/// This is the main type for your game.

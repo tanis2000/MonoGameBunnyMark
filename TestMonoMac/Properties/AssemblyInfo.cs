@@ -11,9 +11,9 @@ using Android.App;
 [assembly: AssemblyTitle ("TestMonoMac")]
 [assembly: AssemblyDescription ("")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("")]
+[assembly: AssemblyCompany ("Altralogica s.r.l.")]
 [assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("tanis")]
+[assembly: AssemblyCopyright ("Altralogica s.r.l.")]
 [assembly: AssemblyTrademark ("")]
 [assembly: AssemblyCulture ("")]
 
