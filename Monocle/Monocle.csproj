@@ -29,13 +29,87 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="Game1.cs" />
-  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
       <HintPath>..\packages\MonoGame.Framework.Portable.3.2.99.1-Beta\lib\portable-net40+sl50+win+wpa81+wp80+MonoAndroid10+MonoTouch10\MonoGame.Framework.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Engine.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Scene.cs" />
+    <Compile Include="Colliders\Circle.cs" />
+    <Compile Include="Colliders\Collide.cs" />
+    <Compile Include="Colliders\ColliderList.cs" />
+    <Compile Include="Colliders\Grid.cs" />
+    <Compile Include="Colliders\Hitbox.cs" />
+    <Compile Include="Components\Component.cs" />
+    <Compile Include="Components\Graphics\DrawRectangle.cs" />
+    <Compile Include="Components\Graphics\GraphicsComponent.cs" />
+    <Compile Include="Components\Graphics\Tilemap.cs" />
+    <Compile Include="Components\Graphics\Image\Image.cs" />
+    <Compile Include="Components\Graphics\Image\MotionBlurImage.cs" />
+    <Compile Include="Components\Graphics\Image\OutlineImage.cs" />
+    <Compile Include="Components\Graphics\Image\TiledImage.cs" />
+    <Compile Include="Components\Graphics\Sprite\Sprite.cs" />
+    <Compile Include="Components\Graphics\Spritesheet\MotionBlurSpritesheet.cs" />
+    <Compile Include="Components\Graphics\Spritesheet\PartialSpritesheet.cs" />
+    <Compile Include="Components\Graphics\Spritesheet\SineSpritesheet.cs" />
+    <Compile Include="Components\Graphics\Spritesheet\Spritesheet.cs" />
+    <Compile Include="Components\Graphics\Text\NumberText.cs" />
+    <Compile Include="Components\Graphics\Text\OutlineText.cs" />
+    <Compile Include="Components\Graphics\Text\Text.cs" />
+    <Compile Include="Components\Graphics\Text\TimerText.cs" />
+    <Compile Include="Components\Logic\Alarm.cs" />
+    <Compile Include="Components\Logic\Coroutine.cs" />
+    <Compile Include="Components\Logic\CoroutineHolder.cs" />
+    <Compile Include="Components\Logic\CounterSet.cs" />
+    <Compile Include="Components\Logic\SineWave.cs" />
+    <Compile Include="Components\Logic\StateMachine.cs" />
+    <Compile Include="Components\Logic\Tween.cs" />
+    <Compile Include="Components\Logic\Wiggler.cs" />
+    <Compile Include="Input\MInput.cs" />
+    <Compile Include="Input\VirtualAxis.cs" />
+    <Compile Include="Input\VirtualButton.cs" />
+    <Compile Include="Input\VirtualInput.cs" />
+    <Compile Include="Input\VirtualIntegerAxis.cs" />
+    <Compile Include="Input\VirtualJoystick.cs" />
+    <Compile Include="InternalUtilities\ComponentList.cs" />
+    <Compile Include="InternalUtilities\EntityList.cs" />
+    <Compile Include="InternalUtilities\TagLists.cs" />
+    <Compile Include="Particles\Particle.cs" />
+    <Compile Include="Particles\ParticleSystem.cs" />
+    <Compile Include="Particles\ParticleType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\EverythingRenderer.cs" />
+    <Compile Include="Renderers\Renderer.cs" />
+    <Compile Include="Renderers\TagExcludeRenderer.cs" />
+    <Compile Include="Renderers\TagRenderer.cs" />
+    <Compile Include="Textures\Atlas.cs" />
+    <Compile Include="Textures\Canvas.cs" />
+    <Compile Include="Textures\SpriteData.cs" />
+    <Compile Include="Textures\Subtexture.cs" />
+    <Compile Include="Textures\Texture.cs" />
+    <Compile Include="Util\Cache.cs" />
+    <Compile Include="Util\Calc.cs" />
+    <Compile Include="Util\Camera.cs" />
+    <Compile Include="Util\CheatListener.cs" />
+    <Compile Include="Util\ChoiceSet.cs" />
+    <Compile Include="Util\Commands.cs" />
+    <Compile Include="Util\Draw.cs" />
+    <Compile Include="Util\Ease.cs" />
+    <Compile Include="Util\MethodHandle.cs" />
+    <Compile Include="Util\Pooler.cs" />
+    <Compile Include="Util\SimpleCurve.cs" />
+    <Compile Include="Util\SpecEntity.cs" />
+    <Compile Include="Util\Tiler.cs" />
+    <Compile Include="Util\Tracker.cs" />
+    <Compile Include="Colliders\Collider.cs" />
+    <Compile Include="Components\Graphics\Image\FlashingImage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Monocle\MonocleDefault.spritefont" />
+    <None Include="Content\Monocle\MonocleDefault.xnb" />
   </ItemGroup>
 </Project>
